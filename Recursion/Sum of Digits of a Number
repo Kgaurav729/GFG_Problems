@@ -1,0 +1,24 @@
+You are given a number n. You need to find the sum of digits of n.
+
+Solution:
+
+class Solution{
+  public:
+    // Complete this function
+    int helper(int n,int sum){
+        sum+=n%10;
+        n=n/10;
+        if(n==0){
+            return sum;
+        }
+        helper(n,sum);
+        
+    }
+    int sumOfDigits(int n)
+    {
+        //Your code here
+        int ans=helper(n,0);
+        return ans;
+        
+    }
+};
